@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    margin:  10px 0 10px 0;
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-family: 'Poppins', serif;
+    text-align: center;
+}
+
+p {
+    font-family: 'Poppins', serif;
+    margin: 8px;
+    font-size: 8px;
+    color: white;
+}
+
+section {
+    display: grid;
+}
+
+a {
+    font-family: 'Montserrat', serif;
+
+    text-decoration: None;
+    color: black;
+    font-size: 7px;
+
+    transition-duration: 250ms;
+}
+
+header {
+    height: 50.8vw;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+nav {
+    position: fixed;
+
+    top: 0;
+
+    width: 100vw;
+    height: 8vh;
+    background-color: #00CA90;
+
+    transition-duration: 500ms;
+
+    display: grid;
+
+    grid-template-columns: 20% repeat(5, auto);
+}
+
+nav > a {
+    margin: auto;
+    color: white;
+}
+
+nav > a:hover {
+    color: #2F4858
+}

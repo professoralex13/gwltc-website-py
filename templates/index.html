@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GWLTC</title>
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            src: url({{ url_for('static', filename='fonts/Montserrat-SemiBold.ttf') }}) format('truetype');
+        }
+           @font-face {
+            font-family: 'Poppins';
+            src: url({{ url_for('static', filename='fonts/Poppins-SemiBold.ttf') }}) format('truetype');
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
+<body>
+    <header style="background-image: url({{ url_for('static', filename='images/Home.jpg') }})">
+        <nav>
+            <div></div>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">MANAGER</a>
+            <a href="#">BOOK</a>
+            <a href="#">ACCOUNT▼</a>
+        </nav>
+    </header>
+    <section style="grid-template-columns: 66.6% auto; background-color: #2F4858">
+        <div>
+            <h1 style="color: #00CA90">ABOUT</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut. Donec elementum tortor justo, vel semper ante rhoncus in. Nulla facilisi. Nunc commodo, nisi et aliquam tincidunt, nibh enim aliquam tellus, commodo aliquam ipsum ante a ex.</p>
+        </div>
+    </section>
+</body>
+</html>
