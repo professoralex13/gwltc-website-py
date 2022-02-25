@@ -3,22 +3,23 @@ body {
 }
 
 h1 {
-    margin:  10px 0 10px 0;
-    font-size: 18px;
-    letter-spacing: 5px;
+    margin:  2vw 0 2vw 0;
+    font-size: 3vw;
+    letter-spacing: 2vw;
     font-family: 'Poppins', serif;
     text-align: center;
 }
 
 p {
     font-family: 'Poppins', serif;
-    margin: 8px;
-    font-size: 8px;
+    margin: 2vw;
+    font-size: 2vw;
     color: white;
 }
 
 section {
     display: grid;
+    height: 44.32vw;
 }
 
 a {
@@ -26,7 +27,7 @@ a {
 
     text-decoration: None;
     color: black;
-    font-size: 7px;
+    font-size: 1.5vw;
 
     transition-duration: 250ms;
 }
@@ -45,7 +46,7 @@ nav {
     top: 0;
 
     width: 100vw;
-    height: 8vh;
+    height: 3.854vw;
     background-color: #00CA90;
 
     transition-duration: 500ms;
@@ -59,7 +60,7 @@ nav > a {
     margin: auto;
     color: white;
 }
-
-nav > a:hover {
-    color: #2F4858
+nav > a:hover,
+#active {
+    text-shadow: 2px 2px #2F4858;
 }
