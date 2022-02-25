@@ -14,19 +14,20 @@
         }
     </style>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <script src="{{ url_for('static', filename='scripts/scroll_manager.js') }}" defer></script>
 </head>
 <body>
     <header style="background-image: url({{ url_for('static', filename='images/Home.jpg') }})">
         <nav>
             <div></div>
-            <a href="#" id="active">HOME</a>
-            <a href="#">ABOUT</a>
-            <a href="#">MANAGER</a>
-            <a href="#">BOOK</a>
-            <a href="#">ACCOUNT▼</a>
+            <a class="header-link active" href="#">HOME</a>
+            <a class="header-link" href="#about">ABOUT</a>
+            <a class="header-link" href="#manager">MANAGER</a>
+            <a class="header-link" href="#">BOOK</a>
+            <a class="header-link" href="#">ACCOUNT▼</a>
         </nav>
     </header>
-    <section style="grid-template-columns: 66.6% auto; background-color: #2F4858">
+    <section style="grid-template-columns: 66.6% auto; background-color: #2F4858" id="about">
         <div>
             <h1 style="color: #00CA90">ABOUT</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut. Donec elementum tortor justo, vel semper ante rhoncus in. Nulla facilisi. Nunc commodo, nisi et aliquam tincidunt, nibh enim aliquam tellus, commodo aliquam ipsum ante a ex.</p>
@@ -41,12 +42,14 @@
               &q=Space+Needle,Seattle+WA">
         </iframe>
     </section>
-    <section style="grid-template-columns: auto 66.6%; background-color: #00AA9C">
+    <section style="grid-template-columns: auto 66.6%; background-color: #00AA9C" id="manager">
         <div id="manager-photo" style="background-image: url({{ url_for('static', filename='images/Manager.jpg') }})"></div>
-        <div>'
+        <div>
             <h1 style="color: #2F4858">MANAGER</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut. Donec elementum tortor justo, vel semper ante rhoncus in. Nulla facilisi. Nunc commodo, nisi et aliquam tincidunt, nibh enim aliquam tellus, commodo aliquam ipsum ante a ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut.</p>
         </div>
     </section>
+    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut. Donec elementum tortor justo, vel semper ante rhoncus in. Nulla facilisi. Nunc commodo, nisi et aliquam tincidunt, nibh enim aliquam tellus, commodo aliquam ipsum ante a ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut.</p>
+     </h1>
 </body>
 </html>
