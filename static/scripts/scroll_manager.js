@@ -16,7 +16,7 @@ links.forEach((link, i) => {
 });
 
 window.addEventListener('scroll', () => {
-    if(window.scrollY >= window.innerWidth * 0.479) {
+    if(window.scrollY >= Math.min(window.innerHeight, window.innerWidth * 0.54) - window.innerWidth * 0.039) {
         nav.classList.add('nav-scrolled');
         navLogo.style.opacity = '1';
     } else {
