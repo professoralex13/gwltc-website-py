@@ -19,6 +19,7 @@
 <body>
     <header style="background-image: url({{ url_for('static', filename='images/Home.jpg') }})">
         <nav>
+            <img id="nav-logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo"/>
             <div></div>
             <a class="header-link active" href="#">HOME</a>
             <a class="header-link" href="#about">ABOUT</a>
@@ -26,6 +27,7 @@
             <a class="header-link" href="#">BOOK</a>
             <a class="header-link" href="#">ACCOUNT▼</a>
         </nav>
+        <img id="header-logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo"/>
     </header>
     <section style="grid-template-columns: 66.6% auto; background-color: #2F4858" id="about">
         <div>

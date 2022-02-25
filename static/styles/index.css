@@ -51,19 +51,51 @@ header {
 nav {
     position: fixed;
 
+    z-index: 1;
+
     top: 0;
 
     width: 100vw;
 
     height: 3.854vw;
 
-    background-color: #00CA90;
-
-    transition-duration: 500ms;
+    background-color: transparent;
 
     display: grid;
 
     grid-template-columns: 20% repeat(5, auto);
+
+    transition-duration: 250ms;
+}
+
+.nav-scrolled {
+    background-color: #00CA90;
+}
+
+#nav-logo {
+    position: absolute;
+
+    top: -0.5vw;
+    left: 11%;
+
+    transform: translate(-50%, 50%);
+
+    opacity: 0;
+
+    width: 10vw;
+
+    transition-duration: 250ms;
+}
+
+#header-logo {
+    position: absolute;
+
+    top: 30vw;
+    left: 50%;
+
+    transform: translate(-50%, 50%);
+
+    width: 50vw;
 }
 
 nav > a {
