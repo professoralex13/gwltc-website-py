@@ -19,7 +19,8 @@ p {
 
 section {
     display: grid;
-    height: 44.32vw;
+    height: 92.5vh;
+    max-height: 50vw;
 }
 
 a {
@@ -33,7 +34,9 @@ a {
 }
 
 header {
-    height: 50.8vw;
+    height: 100vh;
+    max-height: 54vw;
+
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: top;
@@ -46,7 +49,9 @@ nav {
     top: 0;
 
     width: 100vw;
+
     height: 3.854vw;
+
     background-color: #00CA90;
 
     transition-duration: 500ms;
@@ -63,4 +68,11 @@ nav > a {
 nav > a:hover,
 #active {
     text-shadow: 2px 2px #2F4858;
+}
+
+#manager-photo {
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-position-x: -7.5vw;
 }
