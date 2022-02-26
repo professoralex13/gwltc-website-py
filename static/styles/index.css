@@ -98,12 +98,12 @@ nav {
     width: 50vw;
 }
 
-nav > a {
+header > * > a {
     margin: auto;
     color: white;
 }
 
-nav > a:hover{
+header > * > a:hover{
     text-shadow: 3px 3px 3px #2F4858;
 }
 
@@ -116,4 +116,24 @@ nav > a:hover{
     background-position: center bottom;
     background-attachment: fixed;
     background-position-x: -7.5vw;
+}
+
+#account-dropdown {
+    position: fixed;
+    display: flex;
+
+    opacity: 0;
+
+    justify-content: space-between;
+
+    height: 5vw;
+
+    top: 3.2vw;
+    right: 5.5vw;
+
+    flex-direction: column;
+
+    transition-duration: 250ms;
+
+    pointer-events: none;
 }
