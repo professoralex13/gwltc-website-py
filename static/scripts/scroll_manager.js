@@ -9,7 +9,7 @@ links.forEach((link, i) => {
     }
     link.addEventListener('click', (event) => {
         window.scrollTo({
-            top: targets[i - 1].offsetTop - window.innerWidth * 0.03854
+            top: i > 0 ? targets[i - 1].offsetTop - window.innerWidth * 0.03854 : 0
         });
         event.preventDefault();
     });
