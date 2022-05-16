@@ -14,8 +14,9 @@
         }
     </style>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/calendar.css') }}">
     <script src="{{ url_for('static', filename='scripts/scroll_manager.js') }}" defer></script>
-        <script src="{{ url_for('static', filename='scripts/account_dropdown.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='scripts/account_dropdown.js') }}" defer></script>
 </head>
 <body>
     <header style="background-image: url({{ url_for('static', filename='images/Home.jpg') }})">
@@ -25,7 +26,7 @@
             <a class="header-link active" href="#">HOME</a>
             <a class="header-link" href="#about">ABOUT</a>
             <a class="header-link" href="#manager">MANAGER</a>
-            <a class="header-link" href="#">BOOK</a>
+            <a class="header-link" href="#book">BOOK</a>
             <a id="account-button" href="">ACCOUNT▼</a>
         </nav>
         <div id="account-dropdown">
@@ -66,7 +67,35 @@
             </p>
         </div>
     </section>
-    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut. Donec elementum tortor justo, vel semper ante rhoncus in. Nulla facilisi. Nunc commodo, nisi et aliquam tincidunt, nibh enim aliquam tellus, commodo aliquam ipsum ante a ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum ex purus, sed congue nibh mattis ut.</p>
-     </h1>
+    <section style="grid-template-columns: auto 60%; grid-template-rows: 25% auto; background-color: #53E874" id="book">
+        <h1 style="color: white; grid-column: 1 / span2">BOOK</h1>
+        <div>
+            <p>
+                Booking Rules:
+            </p>
+            <ul>
+                <li>Maximum of 2 Hour Booking Time</li>
+                <li>Bookings must be between 8AM and 11PM</li>
+                <li>Court only operates between May and September</li>
+            </ul>
+        </div>
+        <div class="calendar">
+            <div class="calendar-month">
+                <h2>AUGUST</h2>
+            </div>
+            <div class="calendar-days">
+                <h3>SUNDAY</h3>
+                <h3>MONDAY</h3>
+                <h3>TUESDAY</h3>
+                <h3>WEDNESDAY</h3>
+                <h3>THURSDAY</h3>
+                <h3>FRIDAY</h3>
+                <h3>SATURDAY</h3>
+            </div>
+            <div class="calendar-body">
+
+            </div>
+        </div>
+    </section>
 </body>
 </html>

@@ -6,16 +6,20 @@ body {
     margin: 0;
 }
 
+h1, h2, h3 {
+    font-family: 'Poppins', serif;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
 h1 {
     margin:  2vw 0 2vw 0;
     font-size: 3vw;
     letter-spacing: 2vw;
-    font-family: 'Poppins', serif;
-    text-align: center;
 }
 
-
-p {
+p, li {
     font-family: 'Poppins', serif;
     margin: 2vw;
     font-size: 1.9vw;

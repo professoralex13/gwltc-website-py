@@ -1,0 +1,41 @@
+.calendar {
+    display: grid;
+    grid-template-rows: 10% 10% auto;
+
+    background-color: white;
+}
+
+.calendar-month {
+    display: flex;
+    justify-content: space-around;
+
+    background-color: #00AA9C;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 14.28571%);
+    background-color: #2F4858;
+}
+
+.calendar-days > * {
+    width: 100%;
+    border: 1px solid white;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.calendar-days > *:first-child {
+    border-left: 0;
+}
+
+.calendar-days > *:last-child {
+    border-right: 0;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 14.28571%);
+    grid-template-rows: repeat(5, 20%);
+    background-color: #2F4858;
+}
