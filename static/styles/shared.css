@@ -64,7 +64,7 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
     border: #79747E 1px solid;
     padding-left: 10px;
     font-family: "Poppins", serif;
-    margin-bottom: 3.891891891vh;
+    margin-bottom: 1.9vw;
 }
 
 input[type=submit], input[type=button], button {

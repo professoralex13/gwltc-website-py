@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+    <title>Log In</title>
+</head>
+<body>
+    <form>
+        <h1 style="color: #2F4858">LOG IN</h1>
+        <input type="text" placeholder="Email"/>
+        <input type="password" placeholder="Password"/>
+        <input type="submit" value="LOG IN">
+        <div style="height: 19vw"></div>
+        <span>Not a member yet?</span>
+        <a href="{{ url_for('signup') }}"><input type="button" value="SIGN UP"></a>
+    </form>
+    <img id="photo" src="{{ url_for('static', filename='images/Court.png')}}" alt="Tennis Court Long"/>
+</body>
+</html>

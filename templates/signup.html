@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/signup.css') }}">
+    <script src="{{ url_for('static', filename='scripts/signup.js') }}" defer></script>
     <title>Sign Up</title>
 </head>
 <body>
-    <img id="photo" src="{{ url_for('static', filename='images/Net.png')}}"/>
+    <img id="photo" src="{{ url_for('static', filename='images/Net.png')}}" alt="Tennis Court Net"/>
     <form>
         <h1 style="color: #2F4858">SIGN UP</h1>
-        <input type="text" placeholder="First Name"/>
-        <input type="text" placeholder="Last Name"/>
-        <input type="password" placeholder="Password"/>
-        <input type="password" placeholder="Confirm Password"/>
-        <input type="tel" placeholder="Phone Number"/>
-        <input type="email" placeholder="Email"/>
+        <input type="text" placeholder="First Name" name="first_name"/>
+        <input type="text" placeholder="Last Name" name="last_name"/>
+        <input type="password" placeholder="Password" name="password"/>
+        <input id="confirm-password" type="password" placeholder="Confirm Password"/>
+        <input type="tel" placeholder="Phone Number" name="phone_number"/>
+        <input type="email" placeholder="Email" name="email"/>
+        <span style="margin: -1vw 0 0; color: red; visibility: hidden" id="error">Error</span>
         <input type="submit" value="SIGN UP">
         <span>Already a Member?</span>
-        <input type="button" value="LOG IN">
+        <a href="{{ url_for('login') }}"><input type="button" value="LOG IN"></a>
     </form>
 </body>
 </html>
