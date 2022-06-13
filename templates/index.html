@@ -3,17 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>GWLTC</title>
-    <style>
-        @font-face {
-            font-family: 'Montserrat';
-            src: url({{ url_for('static', filename='fonts/Montserrat-SemiBold.ttf') }}) format('truetype');
-        }
-           @font-face {
-            font-family: 'Poppins';
-            src: url({{ url_for('static', filename='fonts/Poppins-SemiBold.ttf') }}) format('truetype');
-        }
-    </style>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/calendar.css') }}">
     <script src="{{ url_for('static', filename='scripts/scroll_manager.js') }}" defer></script>
     <script src="{{ url_for('static', filename='scripts/account_dropdown.js') }}" defer></script>
@@ -30,8 +21,8 @@
             <a id="account-button" href="">ACCOUNT▼</a>
         </nav>
         <div id="account-dropdown">
-            <a href="log-in">LOG IN</a>
-            <a href="sign-in">SIGN UP</a>
+            <a href="login">LOG IN</a>
+            <a href="signup">SIGN UP</a>
         </div>
         <img id="header-logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo"/>
     </header>

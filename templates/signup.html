@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/signup.css') }}">
+    <title>Sign Up</title>
+</head>
+<body>
+    <img id="photo" src="{{ url_for('static', filename='images/Net.png')}}"/>
+    <form>
+        <h1 style="color: #2F4858">SIGN UP</h1>
+        <input type="text" placeholder="First Name"/>
+        <input type="text" placeholder="Last Name"/>
+        <input type="password" placeholder="Password"/>
+        <input type="password" placeholder="Confirm Password"/>
+        <input type="tel" placeholder="Phone Number"/>
+        <input type="email" placeholder="Email"/>
+        <input type="submit" value="SIGN UP">
+        <span>Already a Member?</span>
+        <input type="button" value="LOG IN">
+    </form>
+</body>
+</html>

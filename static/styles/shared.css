@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: normal;
+    src: url("/static/fonts/Montserrat-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    src: url("/static/fonts/Montserrat-SemiBold.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Poppins';
+    font-weight: normal;
+    src: url("/static/fonts/Poppins-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Poppins';
+    font-weight: bold;
+    src: url("/static/fonts/Poppins-SemiBold.ttf") format('truetype');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+h1 {
+    margin:  2vw 0 2vw 0;
+    font-size: 3vw;
+    letter-spacing: 2vw;
+}
+
+p, li {
+    font-family: 'Poppins', serif;
+    margin: 2vw;
+    font-size: 1.9vw;
+    color: white;
+}
+
+span {
+    font-family: 'Poppins', serif;
+    margin: 1.5vw;
+    font-weight: bold;
+    font-size: 1vw;
+    color: black;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=tel], input[type=date], input[type=time] {
+    box-sizing: border-box;
+    width: 17.1354vw;
+    height: 2.916vw;
+    border-radius: 4px;
+    border: #79747E 1px solid;
+    padding-left: 10px;
+    font-family: "Poppins", serif;
+    margin-bottom: 3.891891891vh;
+}
+
+input[type=submit], input[type=button], button {
+    font-family: 'Montserrat', serif;
+    font-weight: normal;
+    background-color: #00AA9C;
+    font-style: normal;
+    color: white;
+    font-size: 2.594594594vh;
+    border: none;
+    border-radius: 10px;
+    width: 9.6875vw;
+    height: 2.916vw;
+    transition-duration: 0.2s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type=submit]:hover, input[type=button]:hover, button:hover {
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.25);
+}

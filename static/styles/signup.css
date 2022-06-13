@@ -1,0 +1,15 @@
+body {
+    display: grid;
+    grid-template-columns: 33% auto;
+}
+
+#photo {
+    height: 100vh;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
