@@ -21,8 +21,13 @@
             <a id="account-button" href="">ACCOUNT▼</a>
         </nav>
         <div id="account-dropdown">
-            <a href="login">LOG IN</a>
-            <a href="signup">SIGN UP</a>
+            {% if not session['email'] %}
+                <a href="login">LOG IN</a>
+                <a href="signup">SIGN UP</a>
+            {% else %}
+                <a href="logout">LOG OUT</a>
+                <a href="settings">SETTINGS</a>
+            {% endif %}
         </div>
         <img id="header-logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo"/>
     </header>

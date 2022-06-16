@@ -1,15 +1,16 @@
 const password = document.querySelector('[name="password"]');
 const confirmPassword = document.getElementById('confirm-password');
 const error = document.getElementById('error');
-const check = () => {
+const check = (e) => {
     if(!confirmPassword.value || confirmPassword.value === password.value) {
         confirmPassword.style.borderColor = '';
-        error.style.visibility = 'hidden';
+        error.innerHTML = '&nbsp;'
     } else {
+        e.preventDefault();
         confirmPassword.style.borderColor = 'red';
-        error.style.visibility = 'visible';
         error.innerText = 'Passwords do not match!'
     }
 }
 password.addEventListener('change', check);
+document.querySelector('[type="submit"]').addEventListener('click', check);
 confirmPassword.addEventListener('change', check);
