@@ -4,13 +4,19 @@
     grid-template-rows: 10% 10% auto;
 
     background-color: white;
+    height: 100%;
 }
 
 .calendar-month {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
 
     background-color: #00AA9C;
+}
+
+.calendar-month > * {
+    margin: auto;
+    background-color: transparent;
 }
 
 .calendar-days {
@@ -22,8 +28,6 @@
 .calendar-days > * {
     width: 100%;
     border: 1px solid white;
-    border-top: 0;
-    border-bottom: 0;
 }
 
 .calendar-days > *:first-child {
@@ -37,6 +41,29 @@
 .calendar-body {
     display: grid;
     grid-template-columns: repeat(7, 14.28571%);
-    grid-template-rows: repeat(5, 20%);
+    grid-template-rows: repeat(6, 16.6666666667%);
     background-color: #2F4858;
+    height: 100%;
+}
+
+.calendar-day {
+    border: 1px solid white;
+}
+
+.calendar-day:hover:not(.closed) {
+    background-color: gray;
+}
+
+.calendar-day > * {
+    font-size: 100%;
+    margin: 0;
+    margin-left: 5px;
+}
+
+.different-month > p {
+    color: rgb(0, 0, 0);
+}
+
+.closed {
+    background-color: rgba(203, 36, 36, 0.5);
 }

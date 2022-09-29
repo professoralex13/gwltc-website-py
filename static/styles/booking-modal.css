@@ -1,0 +1,87 @@
+#booking-modal {
+    z-index: 2;
+    display: none;
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#booking-modal > * {
+    position: fixed;
+    width: 80vw;
+    height: 80vh;
+    left: 10vw;
+    top: 10vh;
+    background-color: white;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 15% 10% 75%;
+    grid-template-columns: 50% 50%;
+}
+
+#booking-modal > * > svg {
+    position: absolute; 
+    right: 10px; 
+    top: 10px;
+    width: 30px;
+    height: 30px;
+
+    transition-duration: 250ms;
+}
+
+#booking-modal > * > svg:hover {
+    right: 5px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#booking-list {
+    grid-row: 3;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    overflow-y: scroll;
+}
+
+#booking-list > div {
+    background-color: #00AA9C;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#booking-list > div > p {
+    margin: 0;
+}
+
+#booking-list > div > svg {
+    position: relative;
+    left: 0;
+    width: 30px; 
+    height: 30px;
+    transition-duration: 250ms;
+}
+
+#booking-list > div > svg:hover {
+    left: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+
+#new-booking {
+    display: flex;
+    padding-right: 37%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5%;
+}

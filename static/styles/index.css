@@ -1,18 +1,12 @@
+body {
+    overflow-x: hidden;
+}
+
+
 section {
     display: grid;
     height: 92.5vh;
     max-height: 50vw;
-}
-
-a {
-    font-family: 'Montserrat', serif;
-    font-weight: bold;
-
-    text-decoration: None;
-    color: black;
-    font-size: 1.5vw;
-
-    transition-duration: 250ms;
 }
 
 header {
@@ -36,7 +30,7 @@ nav {
 
     height: 3.854vw;
 
-    background-color: transparent;
+    background-color: rgba(25, 25, 25, 0.25);
 
     display: grid;
 

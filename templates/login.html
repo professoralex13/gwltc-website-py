@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login-signup.css') }}">
     <title>Log In</title>
+    <style>
+        body {
+            grid-template-columns: auto 33%;
+        }
+    </style>
 </head>
+
 <body>
     <form action="/api/login" method="post">
         <h1 style="color: #2F4858">LOG IN</h1>
-        <input type="text" placeholder="Email" name="email"/>
-        <input type="password" placeholder="Password" name="password"/>
+        <input required type="email" placeholder="Email" name="email" />
+        <input required type="password" placeholder="Password" name="password" />
         <span style="margin: -1vw 0 0; color: red;" id="error">
+            <!-- Must have a non breaking space otherwise the spacing of the flexbox will change -->
             {% if error != None %}
-                {{ error }}
+            {{ error }}
             {% else %}
-                &nbsp;
+            &nbsp;
             {% endif %}
         </span>
         <input type="submit" value="LOG IN">
@@ -25,6 +33,7 @@
         <span>Not a member yet?</span>
         <a href="{{ url_for('signup') }}"><input type="button" value="SIGN UP"></a>
     </form>
-    <img id="photo" src="{{ url_for('static', filename='images/Court.png')}}" alt="Tennis Court Long"/>
+    <img id="photo" src="{{ url_for('static', filename='images/Court.png')}}" alt="Tennis Court Long" />
 </body>
+
 </html>

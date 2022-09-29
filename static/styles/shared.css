@@ -3,16 +3,19 @@
     font-weight: normal;
     src: url("/static/fonts/Montserrat-Regular.ttf") format('truetype');
 }
+
 @font-face {
     font-family: 'Montserrat';
     font-weight: bold;
     src: url("/static/fonts/Montserrat-SemiBold.ttf") format('truetype');
 }
+
 @font-face {
     font-family: 'Poppins';
     font-weight: normal;
     src: url("/static/fonts/Poppins-Regular.ttf") format('truetype');
 }
+
 @font-face {
     font-family: 'Poppins';
     font-weight: bold;
@@ -27,7 +30,9 @@ body {
     margin: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Montserrat', serif;
     font-weight: bold;
     text-align: center;
@@ -35,13 +40,18 @@ h1, h2, h3 {
     color: white;
 }
 
+label {
+    font-family: 'Montserrat', serif;
+}
+
 h1 {
-    margin:  2vw 0 2vw 0;
+    margin: 2vw 0 2vw 0;
     font-size: 3vw;
     letter-spacing: 2vw;
 }
 
-p, li {
+p,
+li {
     font-family: 'Poppins', serif;
     margin: 2vw;
     font-size: 1.9vw;
@@ -56,7 +66,13 @@ span {
     color: black;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=number], input[type=tel], input[type=date], input[type=time] {
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=date],
+input[type=time] {
     box-sizing: border-box;
     width: 17.1354vw;
     height: 2.916vw;
@@ -67,7 +83,10 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
     margin-bottom: 1.9vw;
 }
 
-input[type=submit], input[type=button], button {
+input[type=submit],
+input[type=button],
+button,
+select {
     font-family: 'Montserrat', serif;
     font-weight: normal;
     background-color: #00AA9C;
@@ -82,6 +101,28 @@ input[type=submit], input[type=button], button {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-input[type=submit]:hover, input[type=button]:hover, button:hover {
+option[disabled=true] {
+    color: grey;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover,
+button:hover,
+select:hover {
     box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+option {
+    color: black;
+}
+
+a {
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+
+    text-decoration: None;
+    color: black;
+    font-size: 1.5vw;
+
+    transition-duration: 250ms;
 }

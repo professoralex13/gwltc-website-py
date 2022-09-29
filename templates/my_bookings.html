@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/my_bookings.css') }}">
+    <title>Settings</title>
+</head>
+
+<body>
+    <h1>My Bookings</h1>
+    <a href="/">Home</a>
+    {% for booking in bookings %}
+    <div class="booking-card">
+        <!-- Funky Jinja formatting formats unix times as 24 hr times -->
+        <h2>{{ (booking[0] / 60)|round|int }}:{{ '%02d' % (booking[0] % 60) }} - {{ (booking[1] / 60)|round|int }}:{{
+            '%02d' % (booking[1]
+            % 60) }} | {{ booking[2] }}</h2>
+        <!-- On click handles deletion of booking and then reloads page -->
+        <svg viewbox="0 0 30 30" onclick="
+        if (window.confirm(`Are you sure you would like to delete your booking on {{ booking[2] }}`)) {
+            fetch(`/api/delete-booking/{{ booking [3] }}`, { method: 'POST' }).then(() => location.reload());
+        }">
+            <path d="M2,2 L28,28 M2,28 L28,2" stroke-width="2" stroke="white" />
+        </svg>
+    </div>
+    {% endfor %}
+</body>
+
+</html>

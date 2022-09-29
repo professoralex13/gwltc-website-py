@@ -1,10 +1,14 @@
+/**
+ * Script for handling scroll offsets and nav bar indications to show scroll location
+ */
+
 const links = Array.from(document.getElementsByClassName('header-link'));
 const [nav] = document.getElementsByTagName('nav');
 const navLogo = document.getElementById('nav-logo');
 let targets = [];
 
 links.forEach((link, i) => {
-    if(link.attributes.getNamedItem('href').value.length > 1) {
+    if (link.attributes.getNamedItem('href').value.length > 1) {
         targets.push(document.getElementById(link.attributes.getNamedItem('href').value.substring(1)));
     }
     link.addEventListener('click', (event) => {
@@ -16,7 +20,7 @@ links.forEach((link, i) => {
 });
 
 window.addEventListener('scroll', () => {
-    if(window.scrollY >= Math.min(window.innerHeight, window.innerWidth * 0.54) - window.innerWidth * 0.039) {
+    if (window.scrollY >= Math.min(window.innerHeight, window.innerWidth * 0.54) - window.innerWidth * 0.039) {
         nav.classList.add('nav-scrolled');
         navLogo.style.opacity = '1';
     } else {
@@ -29,6 +33,6 @@ window.addEventListener('scroll', () => {
         link.classList.remove('active');
     }
     let index = targets.length - [...targets].reverse().findIndex((section) => window.scrollY >= section.offsetTop - window.innerWidth * 0.039);
-    if(index === targets.length + 1) index = 0;
+    if (index === targets.length + 1) index = 0;
     links[index].classList.add('active');
 });

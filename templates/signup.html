@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login-signup.css') }}">
     <script src="{{ url_for('static', filename='scripts/signup.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='scripts/specifyFields.js') }}" defer></script>
     <title>Sign Up</title>
+    <style>
+        body {
+            grid-template-columns: 33% auto;
+        }
+    </style>
 </head>
+
 <body>
-    <img id="photo" src="{{ url_for('static', filename='images/Net.png')}}" alt="Tennis Court Net"/>
+    <img id="photo" src="{{ url_for('static', filename='images/Net.png')}}" alt="Tennis Court Net" />
     <form action="/api/signup" method="post">
         <h1 style="color: #2F4858">SIGN UP</h1>
-        <input type="text" placeholder="First Name" name="first_name"/>
-        <input type="text" placeholder="Last Name" name="last_name"/>
-        <input type="password" placeholder="Password" name="password"/>
-        <input id="confirm-password" type="password" placeholder="Confirm Password"/>
-        <input type="tel" placeholder="Phone Number" name="phone"/>
-        <input type="email" placeholder="Email" name="email"/>
+        <input required type="text" placeholder="First Name" name="first_name" />
+        <input required type="text" placeholder="Last Name" name="last_name" />
+        <input required type="password" placeholder="Password" name="password" />
+        <input required id="confirm-password" type="password" placeholder="Confirm Password" />
+        <input required type="tel" placeholder="Phone Number" name="phone" />
+        <input required type="email" placeholder="Email" name="email" />
         <span style="margin: -1vw 0 0; color: red;" id="error">
-           {% if error != None %}
-                {{ error }}
+            <!-- As with login page, non breaking space is required to prevent changing of page spacing -->
+            {% if error != None %}
+            {{ error }}
             {% else %}
-                &nbsp;
+            &nbsp;
             {% endif %}
         </span>
         <input type="submit" value="SIGN UP">
@@ -32,4 +39,5 @@
         <a href="{{ url_for('login') }}"><input type="button" value="LOG IN"></a>
     </form>
 </body>
+
 </html>

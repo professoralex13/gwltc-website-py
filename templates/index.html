@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>GWLTC</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/shared.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/calendar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/booking-modal.css') }}">
     <script src="{{ url_for('static', filename='scripts/scroll_manager.js') }}" defer></script>
     <script src="{{ url_for('static', filename='scripts/account_dropdown.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='scripts/calendar.js') }}" defer></script>
 </head>
+
 <body>
-    <header style="background-image: url({{ url_for('static', filename='images/Home.jpg') }})">
+    <!-- Booking Modal, is at top of script because it is hidden by default, and absolutely positioned -->
+    <div id="booking-modal">
+        <div>
+            <h1 style="color: #00CA90; grid-column: 1 / span 2;" id="booking-title"></h1>
+            <div id="booking-list">
+                <div>
+                    <p></p>
+                    <svg viewbox="0 0 30 30">
+                        <path d="M2,2 L28,28 M2,28 L28,2" stroke-width="2" stroke="white" />
+                    </svg>
+                </div>
+            </div>
+            <h2><span style="color: grey">Other Bookings</span><span style="color: #00AA9C">Your Bookings</span></h2>
+            <h2 style="color: #00CA90; grid-row: 2; grid-column: 2;">New Bookings</h2>
+            <h2 style="color: green; grid-row: 3; {% if session['email'] %} display: none {% endif %}"> Not Logged In
+                </h1>
+                <form id="new-booking" method="post"
+                    style="{% if not session['email'] %} visibility: hidden; {% endif %}">
+                    <label>
+                        Start Time
+                        <select id="start-time-dropdown" name="start_time">
+                        </select>
+                    </label>
+                    <label>
+                        End Time
+                        <select id="end-time-dropdown" name="end_time">
+                        </select>
+                    </label>
+                    <input type="submit" value="Book" />
+                </form>
+                <h2 style="color: green" id="time-slot-full">All time slots full</h1>
+                    <svg onclick="closeBookingModal()" viewbox="0 0 30 30">
+                        <path d="M2,2 L28,28 M2,28 L28,2" stroke-width="1" stroke="green" />
+                    </svg>
+        </div>
+    </div>
+
+    <header style="background-image: url('/static/images/Home.jpg')">
         <nav>
-            <img id="nav-logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo"/>
+            <img id="nav-logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo" />
             <div></div>
             <a class="header-link active" href="#">HOME</a>
             <a class="header-link" href="#about">ABOUT</a>
@@ -20,50 +61,53 @@
             <a class="header-link" href="#book">BOOK</a>
             <a id="account-button" href="">ACCOUNT▼</a>
         </nav>
+        <!-- Account dropdown contents change based on logged in status -->
         <div id="account-dropdown">
             {% if not session['email'] %}
-                <a href="login">LOG IN</a>
-                <a href="signup">SIGN UP</a>
+            <a href="login">LOG IN</a>
+            <a href="signup">SIGN UP</a>
             {% else %}
-                <a href="logout">LOG OUT</a>
-                <a href="settings">SETTINGS</a>
+            <a href="logout">LOG OUT</a>
+            <a href="my-bookings">MY BOOKINGS</a>
             {% endif %}
         </div>
-        <img id="header-logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo"/>
+        <img id="header-logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo" />
     </header>
     <section style="grid-template-columns: 66.6% auto; background-color: #2F4858" id="about">
         <div>
             <h1 style="color: #00CA90">ABOUT</h1>
             <p>
-                Great Wilne Lawn Tennis and Croquet Club was set up in 2007 in the community of Great Wilne, Shardlow. <br>
-                The club was founded to preserve the culture of grass court tennis with croquet provided as a less energetic alternative. <br>
-                The high cost of employing groundsman has forced many tennis clubs to pave over their grass courts forcing the original game into greater obscurity. <br>
-                The court nearly met a premature end in the autumn of its first year when floods threatened to wash away the 170 tonnes of topsoil and newly germinated seed. <br>
-                The primary aim of the club is to provide a non-profit-making family-oriented environment and social focus for the village of Great Wilne.
+                Great Wilne Lawn Tennis and Croquet Club was set up in 2007 in the community of Great Wilne, Shardlow.
+                <br>
+                The club was founded to preserve the culture of grass court tennis with croquet provided as a less
+                energetic alternative. <br>
+                The high cost of employing groundsman has forced many tennis clubs to pave over their grass courts
+                forcing the original game into greater obscurity. <br>
+                The court nearly met a premature end in the autumn of its first year when floods threatened to wash away
+                the 170 tonnes of topsoil and newly germinated seed. <br>
+                The primary aim of the club is to provide a non-profit-making family-oriented environment and social
+                focus for the village of Great Wilne.
             </p>
         </div>
-        <iframe
-            width="100%"
-            height="100%"
-            style="border:0"
-            loading="lazy"
-            allowfullscreen
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCPQNPhWSh3t1PSuYA_Ap2uSS12wZBIjj8
+        <!-- Google maps embed element -->
+        <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCPQNPhWSh3t1PSuYA_Ap2uSS12wZBIjj8
               &q=Great+Wilne+Lawn+Tennis+Club">
         </iframe>
     </section>
+
     <section style="grid-template-columns: auto 66.6%; background-color: #00AA9C" id="manager">
-        <div id="manager-photo" style="background-image: url({{ url_for('static', filename='images/Manager.jpg') }})"></div>
+        <div id="manager-photo" style="background-image: url('/static/images/Manager.jpg')"></div>
         <div>
             <h1 style="color: #2F4858">MANAGER</h1>
             <p>
                 Mike Cutforth is a retired British Midland pilot with a passion for grass tennis.
                 He constructed the court in 2000 after inheriting his grandfathers "Ransomes" cylinder mower.
-                He is part engineer, meteorologist, gardener, and tennis player which are the four requirements for owning a grass court.
+                He is part engineer, meteorologist, gardener, and tennis player which are the four requirements for
+                owning a grass court.
             </p>
         </div>
     </section>
-    <section style="grid-template-columns: auto 60%; grid-template-rows: 25% auto; background-color: #53E874" id="book">
+    <section style="grid-template-columns: auto 60%; grid-template-rows: 25% 75%; background-color: #53E874" id="book">
         <h1 style="color: white; grid-column: 1 / span2">BOOK</h1>
         <div>
             <p>
@@ -75,23 +119,31 @@
                 <li>Court only operates between May and September</li>
             </ul>
         </div>
+        <!-- Calender html is mostly just templates, generation of dates is handled in JavaScript -->
         <div class="calendar">
             <div class="calendar-month">
-                <h2>AUGUST</h2>
+                <select id="month-dropdown" onselect="setMonth">
+                    <option></option>
+                </select>
+                <select id="year-dropdown">
+                </select>
             </div>
             <div class="calendar-days">
-                <h3>SUNDAY</h3>
                 <h3>MONDAY</h3>
                 <h3>TUESDAY</h3>
                 <h3>WEDNESDAY</h3>
                 <h3>THURSDAY</h3>
                 <h3>FRIDAY</h3>
                 <h3>SATURDAY</h3>
+                <h3>SUNDAY</h3>
             </div>
             <div class="calendar-body">
-
+                <div class="calendar-day">
+                    <p></p>
+                </div>
             </div>
         </div>
     </section>
 </body>
+
 </html>
